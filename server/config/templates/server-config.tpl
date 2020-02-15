@@ -139,7 +139,10 @@ ifconfig-pool-persist {{ .IfconfigPoolPersist }}
 # back to the OpenVPN server.
 ;push "route 192.168.10.0 255.255.255.0"
 ;push "route 192.168.20.0 255.255.255.0"
+
+{{ if .PushRoutes }}
 push "route 10.8.0.0 255.255.255.0"
+{{ end }}
 
 # To assign specific IP addresses to specific
 # clients or if a connecting client has a private
@@ -199,8 +202,11 @@ push "route 10.8.0.0 255.255.255.0"
 # DNS servers provided by opendns.com.
 #push "dhcp-option DNS 208.67.222.222"
 #push "dhcp-option DNS 208.67.220.220"
+{{ if .PushRoutes }}
 push "dhcp-option DNS 8.8.8.8"
 push "dhcp-option DNS 8.8.4.4"
+{{ end }}
+
 
 # Uncomment this directive to allow different
 # clients to be able to "see" each other.

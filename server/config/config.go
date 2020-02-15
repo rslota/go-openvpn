@@ -15,6 +15,7 @@ var defaultConfig = Config{
 	Dh:                  "dh2048.pem",
 	Keepalive:           "10 120",
 	IfconfigPoolPersist: "ipp.txt",
+	PushRoutes:			 true,
 }
 
 //Config model
@@ -33,6 +34,7 @@ type Config struct {
 
 	Server              string
 	IfconfigPoolPersist string
+	PushRoutes			bool
 	Keepalive           string
 	MaxClients          int
 
