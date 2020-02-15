@@ -8,6 +8,7 @@ import (
 
 var defaultConfig = Config{
 	ServerAddress: "127.0.0.1",
+	ServerPort:    1194,
 	Port:          1194,
 	Proto:         "udp",
 	Cipher:        "AES-256-CBC",
@@ -19,6 +20,7 @@ var defaultConfig = Config{
 //Config model
 type Config struct {
 	ServerAddress string
+	ServerPort	  int
 	Port          int
 	Proto         string
 
